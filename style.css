@@ -1,0 +1,137 @@
+/* ===== =====>> Google Font Poppins <<===== ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ===== =====>> Universal Selector <<===== ===== */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+/* ===== =====>> Body Html Selector <<===== ===== */
+html {
+  font-size: 10px; /* Here 1rem = 10px */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #efefef;
+  padding: 0 5rem;
+}
+
+.container {
+  width: 60%;
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "sidebar header header header header"
+    "sidebar article1 article1 article2 article2"
+    "sidebar card1 card2 card3 card4";
+  gap: 2rem;
+  padding: 2.5rem;
+  border-radius: 0.6rem;
+  margin-right: 5rem;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0080fd;
+  color: #fff;
+  border-radius: 0.6rem;
+  transition: 0.3s;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #66747f;
+}
+
+.header {
+  grid-area: header;
+  background: #66747f;
+}
+
+.article1 {
+  grid-area: article1;
+}
+
+.article2 {
+  grid-area: article2;
+}
+
+.card {
+  background: #33cc33;
+}
+
+.card1 {
+  grid-area: card1;
+}
+
+.card2 {
+  grid-area: card2;
+}
+
+.card3 {
+  grid-area: card3;
+}
+
+.card4 {
+  grid-area: card4;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-areas:
+      "sidebar header header header header"
+      "sidebar article1 article1 article2 article2"
+      "sidebar card1 card1 card2 card2"
+      "sidebar card3 card3 card4 card4";
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "sidebar header header"
+      "sidebar article1 article1"
+      "sidebar article2 article2"
+      "sidebar card1 card1"
+      "sidebar card2 card2"
+      "sidebar card3 card3"
+      "sidebar card4 card4";
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header "
+      "article1 "
+      "article2 "
+      "card1 "
+      "card2  "
+      "card3  "
+      "card4  ";
+    gap: 1rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+  }
+} 
